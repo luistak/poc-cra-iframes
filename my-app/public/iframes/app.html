@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+  <title>Appy</title>
+  <script>
+    console.log('Entrou aqui');
+    window.addEventListener('message', () => {
+      console.log('RECEBEU MSG')
+    });
+
+    const url = new URL(location.href);
+    const paramys = url.searchParams.getAll('');
+
+    console.log({ namespacePArams })
+
+    var count = 0;
+    setInterval(() => {
+
+      window.parent.postMessage(JSON.stringify(`count: ${count}`), '*');
+
+      count++;
+    }, 1000 * 2)
+  </script>
+</head>
+</html>
